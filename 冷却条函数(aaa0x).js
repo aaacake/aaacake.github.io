@@ -5,6 +5,9 @@ function alldisabled() {
     document.getElementById("btn03").disabled = true;
     document.getElementById("btn04").disabled = true;
     document.getElementById("btn05").disabled = true;
+    document.getElementById("btn06").disabled = true;
+    document.getElementById("btn07").disabled = true;
+    document.getElementById("btn08").disabled = true;
 }
 function allabled() {
     document.getElementById("btn01").disabled = false;
@@ -12,13 +15,16 @@ function allabled() {
     document.getElementById("btn03").disabled = false;
     document.getElementById("btn04").disabled = false;
     document.getElementById("btn05").disabled = false;
+    document.getElementById("btn06").disabled = false;
+    document.getElementById("btn07").disabled = false;
+    document.getElementById("btn08").disabled = false;
 }
 function aaa01(val) {
     if (countdown == 0) {
         val.removeAttribute("disabled");
         val.innerHTML = "查看时间";
         allabled();
-        countdown = 1;
+        countdown = 3;
         // 考虑下一次点击
         abandon = 10;
     } else {
@@ -28,6 +34,42 @@ function aaa01(val) {
         countdown--;
         setTimeout(function () {
             aaa01(val)
+        }, 1000)
+    }
+}
+function aaa0101(val) {
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        val.innerHTML = "打开水龙头";
+        allabled();
+        countdown = 3;
+        // 考虑下一次点击
+        abandon = 10;
+    } else {
+        val.setAttribute("disabled", true);
+        alldisabled();
+        val.innerHTML = "(" + countdown + ")";
+        countdown--;
+        setTimeout(function () {
+            aaa0101(val)
+        }, 1000)
+    }
+}
+function aaa0102(val) {
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        val.innerHTML = "纸袋";
+        allabled();
+        countdown = 3;
+        // 考虑下一次点击
+        abandon = 10;
+    } else {
+        val.setAttribute("disabled", true);
+        alldisabled();
+        val.innerHTML = "(" + countdown + ")";
+        countdown--;
+        setTimeout(function () {
+            aaa0102(val)
         }, 1000)
     }
 }
@@ -98,9 +140,9 @@ function aaa07(val) {
 function aaa05(val) {
     if (countdown == 0) {
         val.removeAttribute("disabled");
-        document.getElementById("btn02").style.display = "none";
+        val.innerHTML = "关闭水龙头";
         allabled();
-        countdown = 5;
+        countdown = 3;
     } else {
         val.setAttribute("disabled", true);
         alldisabled();
@@ -111,12 +153,28 @@ function aaa05(val) {
         }, 1000)
     }
 }
+function aaa0501(val) {
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        val.innerHTML = "打开水龙头";
+        allabled();
+        countdown = 3;
+    } else {
+        val.setAttribute("disabled", true);
+        alldisabled();
+        val.innerHTML = "(" + countdown + ")";
+        countdown--;
+        setTimeout(function () {
+            aaa0501(val)
+        }, 1000)
+    }
+}
 function aaa06(val) {
     if (abandon == 0) {
         val.removeAttribute("disabled");
         val.innerHTML = "继续睡觉";
         allabled();
-        countdown = 5;
+        countdown = 3;
         abandon = 7;
         imath = 1;
     } else {
@@ -201,6 +259,20 @@ function aaa11(val){
         document.getElementById("b1").disabled = true;
         setTimeout(function () {
             aaa11(val)
+        }, 1000)
+    }
+}
+function aaa12(val){
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        val.innerHTML = "待续";
+        countdown = 1;
+    } else {
+        val.setAttribute("disabled", true);
+        val.innerHTML = "(" + countdown + ")";
+        countdown--;
+        setTimeout(function () {
+            aaa12(val)
         }, 1000)
     }
 }

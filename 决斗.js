@@ -12,8 +12,8 @@ function hideWindow() {
 function alltextresourcesin1() {
     localStorage.player00 = "惊慌失措的你:"
     localStorage.player01 = "血量:较低;"
-    localStorage.player02 = "物伤:2;"
-    localStorage.player03 = "强度0~5"
+
+    localStorage.player02 = "强度0~5"
 
     //00 敌对生物名字
     //01 血量
@@ -24,13 +24,12 @@ function alltextresourcesin1() {
     //    看上去不大对劲的凶狗 eee01
     localStorage.enemy0100 = "看上去不大对劲的凶狗:"
     localStorage.enemy0101 = "血量:较低;"
-    localStorage.enemy0102 = "物伤:3;"
-    localStorage.enemy0103 = "强度:1~2"
+    localStorage.enemy0102 = "强度:1~2"
 
     //    其他数据提前配置
     numb = 0;
     numbp = 0;
-    suiji = 5;
+    suiji = 4;
     zhandou = 2;
     time = 3;
     localStorage.suijif = "战斗！"
@@ -84,12 +83,6 @@ function eee01(val) {
         setTimeout(function () {
             eee01(val)
         }, 1000)
-    } else if (numb == 3) {
-        addenemy("enemy0103");
-        numb++;
-        setTimeout(function () {
-            eee01(val)
-        }, 1000)
     }
 }
 
@@ -123,12 +116,6 @@ function playeritem(val) {
         }, 1000)
     } else if (numbp == 2) {
         addplayer("player02");
-        numbp++;
-        setTimeout(function () {
-            playeritem(val)
-        }, 1000)
-    } else if (numbp == 3) {
-        addplayer("player03");
         numbp++;
         setTimeout(function () {
             playeritem(val)
@@ -203,10 +190,7 @@ function addfight(fi) {
     // 把 p 元素附加到 id 位置：
     document.getElementById("fight").appendChild(paraf);
 }
-
-
 function touzi(val, ss, sss) {
-    if (zhandou == 0) {
         document.getElementById("progresse").innerHTML = "";
         touzi1 = Math.floor(Math.random() * (ss)) + 1;
         touzi2 = Math.floor(Math.random() * (sss));
@@ -215,12 +199,7 @@ function touzi(val, ss, sss) {
         zhandou = 1;
         rengou(val);
         aaa11(val);
-    } else {
-        zhandou--;
-        setTimeout(function () {
-            touzi(val, ss, sss)
-        }, 1000)
-    }
+
 }
 
 

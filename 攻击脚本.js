@@ -15,6 +15,11 @@ function rengou(val){
         document.getElementById("b1").disabled = true;
         //            赢了
         aaa07(val);
+        document.getElementById("btn01").innerHTML = "离开";
+        document.getElementById("btn02").style.display = "block";
+        document.getElementById("btn02").innerHTML = "查看店主";
+        document.getElementById("btn03").style.display = "block";
+        document.getElementById("btn03").innerHTML = "逛一下超市";
     }
     else if (touzi1 == touzi2) {
         addfight("ppp02")
