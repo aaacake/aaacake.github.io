@@ -8,6 +8,8 @@ function alldisabled() {
     document.getElementById("btn06").disabled = true;
     document.getElementById("btn07").disabled = true;
     document.getElementById("btn08").disabled = true;
+    document.getElementById("toplace1").disabled = true;
+    document.getElementById("toplace2").disabled = true;
 }
 function allabled() {
     document.getElementById("btn01").disabled = false;
@@ -18,6 +20,8 @@ function allabled() {
     document.getElementById("btn06").disabled = false;
     document.getElementById("btn07").disabled = false;
     document.getElementById("btn08").disabled = false;
+    document.getElementById("toplace1").disabled = false;
+    document.getElementById("toplace2").disabled = false;
 }
 function aaa01(val) {
     if (countdown == 0) {
@@ -70,6 +74,24 @@ function aaa0102(val) {
         countdown--;
         setTimeout(function () {
             aaa0102(val)
+        }, 1000)
+    }
+}
+function aaa0103(val) {
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        val.innerHTML = "家";
+        allabled();
+        countdown = 3;
+        // 考虑下一次点击
+        abandon = 10;
+    } else {
+        val.setAttribute("disabled", true);
+        alldisabled();
+        val.innerHTML = "(" + countdown + ")";
+        countdown--;
+        setTimeout(function () {
+            aaa0103(val)
         }, 1000)
     }
 }
@@ -201,7 +223,9 @@ function aaa07(val) {
 function aaa08(val) {
     if (countdown == 0) {
         val.removeAttribute("disabled");
-        val.innerHTML = "进店查看一番";
+        val.innerHTML = "便利店";
+        document.getElementById("toplace1").disabled = false;
+        document.getElementById("btn01").innerHTML = "进店查看一番";
         allabled();
         countdown = 5;
     } else {
@@ -247,7 +271,7 @@ function aaa10(val) {
         }, 1000)
     }
 }
-function aaa11(val){
+function aaa11(val) {
     if (countdown == 0) {
         val.removeAttribute("disabled");
         val.innerHTML = "战斗";
@@ -262,7 +286,7 @@ function aaa11(val){
         }, 1000)
     }
 }
-function aaa12(val){
+function aaa12(val) {
     if (countdown == 0) {
         val.removeAttribute("disabled");
         val.innerHTML = "待续";

@@ -52,12 +52,6 @@ function btn1(val) {
             additem("name11");
             document.getElementById("btn01").innerHTML = "脚受伤了";
             document.getElementById("btn01").disabled = true;
-        } else if (document.getElementById('btn01').innerText == "出门") {
-            document.getElementById("btn01").innerHTML = "去往便利店";
-            document.getElementById("btn03").style.display = "none";
-        } else if (document.getElementById('btn01').innerText == "去往便利店") {
-            aaa08(val);
-            additem("name15");
         } else if (document.getElementById('btn01').innerText == "进店查看一番") {
             aaa09(val);
             additem("name16");
