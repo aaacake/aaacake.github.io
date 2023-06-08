@@ -45,12 +45,13 @@ function fangbianmian() {
         // 点击使数值变化
         localStorage.thing0101 = Number(localStorage.thing0101) + 1;
         document.getElementById("number01").innerHTML = localStorage.thing0101;
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.1;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
 
-        if(Number(localStorage.fuzhong2)>=70){
+        if (Number(localStorage.fuzhong2) >= 70) {
             document.getElementById("btn01").disabled = true;
+
         }
 
     } else if (localStorage.thing0101 > 0 && number01 == 0) {
@@ -61,6 +62,8 @@ function fangbianmian() {
         fangbianmian01("thing01");
         fangbianmian0101("thing0101");
         number01++;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
     }
 }
 function fangbianmian0102() {
@@ -69,11 +72,11 @@ function fangbianmian0102() {
         localStorage.thing0101 = Number(localStorage.thing0101) - 1;
         document.getElementById("number01").innerHTML = localStorage.thing0101;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.1;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) - 0.1).toFixed(2);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0101 == 0) {
             document.getElementById("btn02").disabled = true;
-        }else if(Number(localStorage.fuzhong2)<=70){
+        } else if (Number(localStorage.fuzhong2) <= 70) {
             document.getElementById("btn01").disabled = false;
         }
     }
@@ -108,13 +111,13 @@ function shui() {
         localStorage.thing0201 = Number(localStorage.thing0201) + 1;
         document.getElementById("number02").innerHTML = localStorage.thing0201;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.6;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.6).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
 
-        if(Number(localStorage.fuzhong2)>=70){
+        if (Number(localStorage.fuzhong2) >= 70) {
             document.getElementById("btn01").disabled = true;
-        }else{document.getElementById("btn02").disabled = false;}
+        } else { document.getElementById("btn02").disabled = false; }
     } else if (localStorage.thing0201 > 0 && number02 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main02");
@@ -123,6 +126,8 @@ function shui() {
         shui01("thing02");
         shui0101("thing0201");
         number02++;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.6).toFixed(1);
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
     }
 }
 function shui0102() {
@@ -131,12 +136,12 @@ function shui0102() {
         localStorage.thing0201 = Number(localStorage.thing0201) - 1;
         document.getElementById("number02").innerHTML = localStorage.thing0201;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.6;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) - 0.6).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0201 == 0) {
             document.getElementById("btn02").disabled = true;
 
-        }else if(Number(localStorage.fuzhong2)<=70){
+        } else if (Number(localStorage.fuzhong2) <= 70) {
             document.getElementById("btn01").disabled = false;
         }
     }
@@ -166,19 +171,21 @@ function zhidai0101(a) {
     document.getElementById("main03").appendChild(paray);
 }
 function zhidai() {
-    if (localStorage.thing0301 >= 0 && number03 > 0) {
+    if (localStorage.thing0301 >= 0 && number03 > 0 && localStorage.thing0301 < 3) {
         // 点击使数值变化
         localStorage.thing0301 = Number(localStorage.thing0301) + 1;
         document.getElementById("number03").innerHTML = localStorage.thing0301;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.1;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+        localStorage.fuzhong4 = (Number(localStorage.fuzhong4) + 10).toFixed(1);
+        document.getElementById("zhongliangy").innerHTML = localStorage.fuzhong4;
 
         document.getElementById("btn02").disabled = false;
 
-        if(Number(localStorage.fuzhong2)>=70){
+        if (Number(localStorage.fuzhong2) >= 70) {
             document.getElementById("btn01").disabled = true;
-        }else{document.getElementById("btn02").disabled = false;}
+        } else { document.getElementById("btn02").disabled = false; }
     } else if (localStorage.thing0301 > 0 && number03 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main03");
@@ -187,6 +194,23 @@ function zhidai() {
         zhidai01("thing03");
         zhidai0101("thing0301");
         number03++;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+        localStorage.fuzhong4 = (Number(localStorage.fuzhong4) + 10).toFixed(1);
+        document.getElementById("zhongliangy").innerHTML = localStorage.fuzhong4;
+    } else if (localStorage.thing0301 >= 3) {
+        // 点击使数值变化
+        localStorage.thing0301 = Number(localStorage.thing0301) + 1;
+        document.getElementById("number03").innerHTML = localStorage.thing0301;
+
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+
+        document.getElementById("btn02").disabled = false;
+
+        if (Number(localStorage.fuzhong2) >= 70) {
+            document.getElementById("btn01").disabled = true;
+        } else { document.getElementById("btn02").disabled = false; }
     }
 }
 function zhidai0102() {
@@ -194,13 +218,13 @@ function zhidai0102() {
         // 点击使数值变化
         localStorage.thing0301 = Number(localStorage.thing0301) - 1;
         document.getElementById("number03").innerHTML = localStorage.thing0301;
-
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.1;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) - 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+        localStorage.fuzhong4 = (Number(localStorage.fuzhong4) - 10).toFixed(1);
+        document.getElementById("zhongliangy").innerHTML = localStorage.fuzhong4;
         if (localStorage.thing0301 == 0) {
             document.getElementById("btn02").disabled = true;
-
-        }else if(Number(localStorage.fuzhong2)<=70){
+        } else if (Number(localStorage.fuzhong2) <= 70) {
             document.getElementById("btn01").disabled = false;
         }
     }
@@ -235,13 +259,13 @@ function ganzi() {
         localStorage.thing0401 = Number(localStorage.thing0401) + 1;
         document.getElementById("number04").innerHTML = localStorage.thing0401;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 2;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 2).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
 
-        if(Number(localStorage.fuzhong2)>=70){
+        if (Number(localStorage.fuzhong2) >= 70) {
             document.getElementById("btn01").disabled = true;
-        }else{document.getElementById("btn02").disabled = false;}
+        } else { document.getElementById("btn02").disabled = false; }
     } else if (localStorage.thing0401 > 0 && number04 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main04");
@@ -250,6 +274,8 @@ function ganzi() {
         ganzi01("thing04");
         ganzi0101("thing0401");
         number04++;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 2).toFixed(1);
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
     }
 }
 function ganzi0102() {
@@ -258,11 +284,11 @@ function ganzi0102() {
         localStorage.thing0401 = Number(localStorage.thing0401) - 1;
         document.getElementById("number04").innerHTML = localStorage.thing0401;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 2;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) - 2).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0401 == 0) {
             document.getElementById("btn02").disabled = true;
-        }else if(Number(localStorage.fuzhong2)<=70){
+        } else if (Number(localStorage.fuzhong2) <= 70) {
             document.getElementById("btn01").disabled = false;
         }
     }
@@ -297,13 +323,13 @@ function zhijin() {
         localStorage.thing0501 = Number(localStorage.thing0501) + 1;
         document.getElementById("number05").innerHTML = localStorage.thing0501;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.1;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
 
-        if(Number(localStorage.fuzhong2)>=70){
+        if (Number(localStorage.fuzhong2) >= 70) {
             document.getElementById("btn01").disabled = true;
-        }else{document.getElementById("btn02").disabled = false;}
+        } else { document.getElementById("btn02").disabled = false; }
     } else if (localStorage.thing0501 > 0 && number05 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main05");
@@ -312,6 +338,8 @@ function zhijin() {
         zhijin01("thing05");
         zhijin0101("thing0501");
         number05++;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
     }
 }
 function zhijin0102() {
@@ -320,12 +348,12 @@ function zhijin0102() {
         localStorage.thing0501 = Number(localStorage.thing0501) - 1;
         document.getElementById("number05").innerHTML = localStorage.thing0501;
 
-        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.1;
+        localStorage.fuzhong2 = (Number(localStorage.fuzhong2) - 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0501 == 0) {
             document.getElementById("btn02").disabled = true;
 
-        }else if(Number(localStorage.fuzhong2)<=70){
+        } else if (Number(localStorage.fuzhong2) <= 70) {
             document.getElementById("btn01").disabled = false;
         }
     }

@@ -18,9 +18,13 @@ function btn1(val) {
             zhuangtai("zhuangtai1");
             zhuangtaix("zhuangtai2");
             zhuangtai("zhuangtai3");
+            zhuangtaiy("zhuangtai4");
+            zhuangtai("zhuangtai5");
             fuzhong("fuzhong1");
             fuzhongx("fuzhong2");
             fuzhong("fuzhong3");
+            fuzhongy("fuzhong4");
+            fuzhong("fuzhong5");
         } else if (document.getElementById('btn01').innerText == "查看时间" && imath == 0) {
             aaa02(val);
             additem("name02");
