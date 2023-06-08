@@ -223,7 +223,7 @@ function aaa08(val) {
         document.getElementById("toplace1").disabled = false;
         document.getElementById("btn01").innerHTML = "进店查看一番";
         allabled();
-        countdown = 5;
+        countdown = 3;
     } else {
         val.setAttribute("disabled", true);
         alldisabled();
@@ -239,7 +239,7 @@ function aaa09(val) {
         val.removeAttribute("disabled");
         val.innerHTML = "走到货架后面";
         allabled();
-        countdown = 3;
+        countdown = 2;
     } else {
         val.setAttribute("disabled", true);
         alldisabled();

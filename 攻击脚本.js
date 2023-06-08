@@ -22,15 +22,22 @@ function rengou(val) {
         document.getElementById("btn03").innerHTML = "逛一下超市";
     }
     else if (touzi1 == touzi2) {
-        addfight("ppp02")
+        addfight("ppp02");
+        
     } else if (touzi1 > touzi2 && rengougou == 0) {
         addfight("ppp03");
+        localStorage.zhuangtai2 = (Number(localStorage.zhuangtai2) - 20).toFixed(1);
+        document.getElementById("jiankangzhi").innerHTML = localStorage.zhuangtai2;
         rengougou++;
     } else if (touzi1 > touzi2 && rengougou == 1) {
         addfight("ppp04");
+        localStorage.zhuangtai2 = (Number(localStorage.zhuangtai2) - 50).toFixed(1);
+        document.getElementById("jiankangzhi").innerHTML = localStorage.zhuangtai2;
         rengougou++;
     } else if (touzi1 > touzi2 && rengougou == 2) {
         addfight("ppp08");
+        localStorage.zhuangtai2 = (Number(localStorage.zhuangtai2) - 100).toFixed(1);
+        document.getElementById("jiankangzhi").innerHTML = localStorage.zhuangtai2;
         rengouren = 0;
         rengougou = 0;
         document.getElementById("b1").disabled = true;

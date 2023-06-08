@@ -198,7 +198,7 @@ function zhidai() {
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         localStorage.fuzhong4 = (Number(localStorage.fuzhong4) + 10).toFixed(1);
         document.getElementById("zhongliangy").innerHTML = localStorage.fuzhong4;
-    } else if (localStorage.thing0301 >= 3) {
+    } else if (localStorage.thing0301 > 3) {
         // 点击使数值变化
         localStorage.thing0301 = Number(localStorage.thing0301) + 1;
         document.getElementById("number03").innerHTML = localStorage.thing0301;
