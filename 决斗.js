@@ -35,7 +35,7 @@ function alltextresourcesin1() {
     localStorage.suijif = "战斗！"
     rengouren = 0;
     rengougou = 0;
-    
+
 
 
     //  战斗资源
@@ -191,14 +191,14 @@ function addfight(fi) {
     document.getElementById("fight").appendChild(paraf);
 }
 function touzi(val, ss, sss) {
-        document.getElementById("progresse").innerHTML = "";
-        touzi1 = Math.floor(Math.random() * (ss)) + 1;
-        touzi2 = Math.floor(Math.random() * (sss));
-        addsuiji2(touzi1);
-        addsuiji2(touzi2);
-        zhandou = 1;
-        rengou(val);
-        aaa11(val);
+    document.getElementById("progresse").innerHTML = "";
+    touzi1 = Math.floor(Math.random() * (ss)) + 1;
+    touzi2 = Math.floor(Math.random() * (sss));
+    addsuiji2(touzi1);
+    addsuiji2(touzi2);
+    zhandou = 1;
+    rengou(val);
+    aaa11(val);
 
 }
 

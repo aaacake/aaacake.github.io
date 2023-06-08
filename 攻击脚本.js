@@ -1,4 +1,4 @@
-function rengou(val){
+function rengou(val) {
     if (touzi1 < touzi2 && rengouren == 0) {
         //        玩家获胜
         addfight("ppp01");

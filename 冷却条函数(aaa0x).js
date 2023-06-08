@@ -47,8 +47,6 @@ function aaa0101(val) {
         val.innerHTML = "打开水龙头";
         allabled();
         countdown = 3;
-        // 考虑下一次点击
-        abandon = 10;
     } else {
         val.setAttribute("disabled", true);
         alldisabled();
@@ -65,8 +63,6 @@ function aaa0102(val) {
         val.innerHTML = "纸袋";
         allabled();
         countdown = 3;
-        // 考虑下一次点击
-        abandon = 10;
     } else {
         val.setAttribute("disabled", true);
         alldisabled();

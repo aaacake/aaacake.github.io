@@ -1,6 +1,6 @@
 function btn5(val) {
     if (typeof (Storage) !== "undefined") {
-        if (document.getElementById('btn05').innerText == "一箱纸巾" ) {
+        if (document.getElementById('btn05').innerText == "一箱纸巾") {
             document.getElementById("btn01").innerHTML = "取出一盒纸巾";
             document.getElementById("btn02").innerHTML = "放回去一盒纸巾";
             document.getElementById("btn03").innerHTML = "返回";

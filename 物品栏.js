@@ -1,19 +1,3 @@
-// function famu() {
-//    if (typeof (Storage) !== "undefined") {
-//        if (localStorage.clickcount && localStorage.clickcount > 0) {
-//            // 点击使数值变化
-//            localStorage.clickcount = Number(localStorage.clickcount) - 1;
-//            additem("name01");
-//        } else {
-//            localStorage.clickcount = 0;
-//            additem("name02");
-//        }
-//        document.getElementById("mutou").innerHTML = localStorage.clickcount;
-
-//    } else {
-//        document.getElementById("mutou").innerHTML = "Sorry, your browser does not support web storage...";
-//    }
-// }
 function alltextresourcesin2() {
     localStorage.thing01 = "方便面"
     localStorage.thing0101 = "1"
@@ -31,6 +15,7 @@ function alltextresourcesin2() {
     number04 = 0;
     number05 = 0;
 }
+
 function fangbianmian01(a) {
     const para = document.createElement("div");
     // para.setAttribute("class", "item");
@@ -60,8 +45,15 @@ function fangbianmian() {
         // 点击使数值变化
         localStorage.thing0101 = Number(localStorage.thing0101) + 1;
         document.getElementById("number01").innerHTML = localStorage.thing0101;
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.1;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
-    } else if(localStorage.thing0101 > 0 && number01 == 0){
+
+        if(Number(localStorage.fuzhong2)>=70){
+            document.getElementById("btn01").disabled = true;
+        }
+
+    } else if (localStorage.thing0101 > 0 && number01 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main01");
         para.setAttribute("style", "display:flex;flex:1;justify-content: space-around");
@@ -69,7 +61,6 @@ function fangbianmian() {
         fangbianmian01("thing01");
         fangbianmian0101("thing0101");
         number01++;
-        
     }
 }
 function fangbianmian0102() {
@@ -77,9 +68,13 @@ function fangbianmian0102() {
         // 点击使数值变化
         localStorage.thing0101 = Number(localStorage.thing0101) - 1;
         document.getElementById("number01").innerHTML = localStorage.thing0101;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.1;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0101 == 0) {
             document.getElementById("btn02").disabled = true;
-            
+        }else if(Number(localStorage.fuzhong2)<=70){
+            document.getElementById("btn01").disabled = false;
         }
     }
 }
@@ -112,8 +107,15 @@ function shui() {
         // 点击使数值变化
         localStorage.thing0201 = Number(localStorage.thing0201) + 1;
         document.getElementById("number02").innerHTML = localStorage.thing0201;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.6;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
-    } else if(localStorage.thing0201 > 0 && number02 == 0){
+
+        if(Number(localStorage.fuzhong2)>=70){
+            document.getElementById("btn01").disabled = true;
+        }else{document.getElementById("btn02").disabled = false;}
+    } else if (localStorage.thing0201 > 0 && number02 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main02");
         para.setAttribute("style", "display:flex;flex:1;justify-content: space-around");
@@ -128,9 +130,14 @@ function shui0102() {
         // 点击使数值变化
         localStorage.thing0201 = Number(localStorage.thing0201) - 1;
         document.getElementById("number02").innerHTML = localStorage.thing0201;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.6;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0201 == 0) {
             document.getElementById("btn02").disabled = true;
-            
+
+        }else if(Number(localStorage.fuzhong2)<=70){
+            document.getElementById("btn01").disabled = false;
         }
     }
 }
@@ -163,8 +170,16 @@ function zhidai() {
         // 点击使数值变化
         localStorage.thing0301 = Number(localStorage.thing0301) + 1;
         document.getElementById("number03").innerHTML = localStorage.thing0301;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.1;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+
         document.getElementById("btn02").disabled = false;
-    } else if(localStorage.thing0301 > 0 && number03 == 0){
+
+        if(Number(localStorage.fuzhong2)>=70){
+            document.getElementById("btn01").disabled = true;
+        }else{document.getElementById("btn02").disabled = false;}
+    } else if (localStorage.thing0301 > 0 && number03 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main03");
         para.setAttribute("style", "display:flex;flex:1;justify-content: space-around");
@@ -179,9 +194,14 @@ function zhidai0102() {
         // 点击使数值变化
         localStorage.thing0301 = Number(localStorage.thing0301) - 1;
         document.getElementById("number03").innerHTML = localStorage.thing0301;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.1;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0301 == 0) {
             document.getElementById("btn02").disabled = true;
-            
+
+        }else if(Number(localStorage.fuzhong2)<=70){
+            document.getElementById("btn01").disabled = false;
         }
     }
 }
@@ -214,8 +234,15 @@ function ganzi() {
         // 点击使数值变化
         localStorage.thing0401 = Number(localStorage.thing0401) + 1;
         document.getElementById("number04").innerHTML = localStorage.thing0401;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 2;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
-    } else if(localStorage.thing0401 > 0 && number04 == 0){
+
+        if(Number(localStorage.fuzhong2)>=70){
+            document.getElementById("btn01").disabled = true;
+        }else{document.getElementById("btn02").disabled = false;}
+    } else if (localStorage.thing0401 > 0 && number04 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main04");
         para.setAttribute("style", "display:flex;flex:1;justify-content: space-around");
@@ -230,9 +257,13 @@ function ganzi0102() {
         // 点击使数值变化
         localStorage.thing0401 = Number(localStorage.thing0401) - 1;
         document.getElementById("number04").innerHTML = localStorage.thing0401;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 2;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0401 == 0) {
             document.getElementById("btn02").disabled = true;
-            
+        }else if(Number(localStorage.fuzhong2)<=70){
+            document.getElementById("btn01").disabled = false;
         }
     }
 }
@@ -265,8 +296,15 @@ function zhijin() {
         // 点击使数值变化
         localStorage.thing0501 = Number(localStorage.thing0501) + 1;
         document.getElementById("number05").innerHTML = localStorage.thing0501;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) + 0.1;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
-    } else if(localStorage.thing0501 > 0 && number05 == 0){
+
+        if(Number(localStorage.fuzhong2)>=70){
+            document.getElementById("btn01").disabled = true;
+        }else{document.getElementById("btn02").disabled = false;}
+    } else if (localStorage.thing0501 > 0 && number05 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main05");
         para.setAttribute("style", "display:flex;flex:1;justify-content: space-around");
@@ -281,9 +319,14 @@ function zhijin0102() {
         // 点击使数值变化
         localStorage.thing0501 = Number(localStorage.thing0501) - 1;
         document.getElementById("number05").innerHTML = localStorage.thing0501;
+
+        localStorage.fuzhong2 = Number(localStorage.fuzhong2) - 0.1;
+        document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         if (localStorage.thing0501 == 0) {
             document.getElementById("btn02").disabled = true;
-            
+
+        }else if(Number(localStorage.fuzhong2)<=70){
+            document.getElementById("btn01").disabled = false;
         }
     }
 }

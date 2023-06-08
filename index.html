@@ -94,6 +94,7 @@
     <script src="攻击脚本.js" type="text/javascript"></script>
     <script src="toplace1.js" type="text/javascript"></script>
     <script src="toplace2.js" type="text/javascript"></script>
+    <script src="状态栏.js" type="text/javascript"></script>
     <!--    <script type="text/javascript">-->
     <!--        function famu();-->
     <!--    </script>-->
@@ -106,6 +107,7 @@
             // touzi(val,2,2);
 
 
+            // jiancha=0;
             /*悬浮窗口的显示,需要将display变成block*/
             document.getElementById("window").style.display = "flex";
             /*将背景变暗*/
@@ -121,15 +123,16 @@
             document.getElementById("progress").innerHTML = "";
             document.getElementById("progresse").innerHTML = "";
             document.getElementById("zhandou").innerHTML = "";
-            <!--            document.getElementById("wenzi").innerHTML = "";-->
             document.getElementById("fight").innerHTML = "";
         }
     </script>
 </head>
 
 <body class="flx" style="margin-top:5px;margin-left:5px;margin-right:5px"
-    onload="alltextresourcesin();alltextresourcesin1();alltextresourcesin2()">
-
+     onload="alltextresourcesin();alltextresourcesin1();alltextresourcesin2();alltextresourcesin3()">
+    <script>
+        var namea = prompt("请输入你的名字", "狗蛋");
+    </script>
 
     <!--    文字提示框   -->
     <div class="flx mgt1 mgl1 mgr1"
@@ -212,31 +215,28 @@
             </div>
         </div>
     </div>
-    <!--    物品栏目框   -->
-    <div class="flx mgl1 mgr1" style="flex:0.5;margin-top:15px;flex-direction:column;display:flex;display: none;"
-        id="wupin">
-        <div style="display:flex;border:1px solid black;flex-direction: column;">
-            <div class="flx" style="justify-content:center">
-                <div class="flx" id="pock">口袋</div>
-            </div>
-            <!--    这里每一个div都要套两个div，将物品和数值分开   -->
-            <div class="item" id="playerthings" style="flex-direction: column;">
-                <!-- <div>木头</div>
-                <div id="mutou">
-                       数值应该开始就显示在div位置   
-                    <script>document.getElementById("mutou").innerHTML = 10</script>
-                    <script>localStorage.clickcount = 10</script>
-                </div> -->  
-            </div>
 
+    <div style="flex:0.5;">
+        <!-- 人物状态框 -->
+        <div class="flx mgl1 mgr1" style="flex:1;margin-top:15px;border:1px solid black;display:flex;flex-direction: column;
+        align-items: center;">
+            <div class="item" id="zhuangtai1"></div>
+            <div class="item" id="zhuangtai2"></div>
+            <div class="item" id="zhuangtai3"></div>
+        </div>
+        <!--    物品栏目框   -->
+        <div class="flx mgl1 mgr1" style="flex:1;margin-top:15px;display: none;" id="wupin">
+            <div style="display:flex;border:1px solid black;flex-direction: column;">
+                <div class="flx" style="justify-content:center">
+                    <div class="flx" id="pock">口袋</div>
+                </div>
+                <!--    这里每一个div都要套两个div，将物品和数值分开   -->
+                <div class="item" id="playerthings" style="flex-direction: column;">
 
-            <!-- <div class="item">
-                <div>木头</div>
-                <div>45</div>
-            </div> -->
+                </div>
+            </div>
         </div>
     </div>
-
 
     <!--悬浮窗口-->
     <div id="window" class="window_css" style="flex-direction:column">

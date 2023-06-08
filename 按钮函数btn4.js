@@ -1,6 +1,6 @@
 function btn4(val) {
     if (typeof (Storage) !== "undefined") {
-        if (document.getElementById('btn04').innerText == "金属杆子" ) {
+        if (document.getElementById('btn04').innerText == "金属杆子") {
             document.getElementById("btn01").innerHTML = "拔出一根杆子";
             document.getElementById("btn02").innerHTML = "插回去一根杆子";
             document.getElementById("btn03").innerHTML = "返回";
@@ -11,7 +11,7 @@ function btn4(val) {
             document.getElementById("btn08").style.display = "none";
             document.getElementById("btn02").disabled = true;
 
-        }else if (document.getElementById('btn04').innerText == "主卧") {
+        } else if (document.getElementById('btn04').innerText == "主卧") {
             aaa0101(val);
             // document.getElementById("btn01").innerHTML = "查看时间";
             document.getElementById("btn02").style.display = "block";

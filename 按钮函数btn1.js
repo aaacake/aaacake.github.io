@@ -14,6 +14,13 @@ function btn1(val) {
             shuijiao = 0;
             additem("name01");
             document.getElementById("toplace2").style.display = "block";
+            namee(namea);
+            zhuangtai("zhuangtai1");
+            zhuangtaix("zhuangtai2");
+            zhuangtai("zhuangtai3");
+            fuzhong("fuzhong1");
+            fuzhongx("fuzhong2");
+            fuzhong("fuzhong3");
         } else if (document.getElementById('btn01').innerText == "查看时间" && imath == 0) {
             aaa02(val);
             additem("name02");
