@@ -1,7 +1,7 @@
 function btn7(val) {
     if (document.getElementById('btn07').innerText == "主卧") {
         aaa01(val);
-        // document.getElementById("btn01").innerHTML = "查看时间";
+        document.getElementById("btn01").innerHTML = "查看时间";
         document.getElementById("btn02").style.display = "block";
         document.getElementById("btn02").innerHTML = "卫生间";
         document.getElementById("btn03").style.display = "block";

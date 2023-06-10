@@ -25,6 +25,21 @@ function btn4(val) {
             document.getElementById("btn07").style.display = "none";
             document.getElementById("btn08").style.display = "none";
             document.getElementById("toplace2").style.display = "block";
+        } else if (document.getElementById('btn04').innerText == "继续睡觉" && shuijiao < 5) {
+            additem("name06");
+            aaa06(val);
+            shuijiao = shuijiao + 1;
+        } else if (document.getElementById('btn04').innerText == "继续睡觉" && shuijiao == 5) {
+            additem("name12");
+            aaa06(val);
+            shuijiao = shuijiao + 1;
+        } else if (document.getElementById('btn04').innerText == "继续睡觉" && shuijiao < 8 && shuijiao > 5) {
+            additem("name14");
+            aaa06(val);
+            shuijiao = shuijiao + 1;
+        } else if (document.getElementById('btn04').innerText == "继续睡觉" && shuijiao == 8) {
+            additem("name13");
+            document.getElementById("btn04").disabled = true;
         }
 
     }

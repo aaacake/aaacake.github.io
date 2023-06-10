@@ -129,9 +129,30 @@
 </head>
 
 <body class="flx" style="margin-top:5px;margin-left:5px;margin-right:5px"
-     onload="alltextresourcesin();alltextresourcesin1();alltextresourcesin2();alltextresourcesin3()">
+    onload="alltextresourcesin();alltextresourcesin1();alltextresourcesin2();alltextresourcesin3()">
+    <!-- 弹窗代码开始 -->
+    <div class="web_notice"
+        style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.3);z-index: 99999;">
+        <div
+            style="position: fixed;top: 50%;left: 50%;width: 550px;background: #FFF;transform: translate(-50%, -50%);border-radius: 40px;padding: 50px 40px;">
+            <h3 style="font-weight: bold;text-align: center;font-size: 30px;">游戏简介</h3>
+            <div style="font-size: 16px;margin-top: 26px;line-height: 30px;color: #999;">
+                亲爱的玩家，你的小镇坐落在被誉为“森林王国”的一个国家里，你本想隐居于此，但战火仍然影响到了你。现在你所处的小镇遭到了辐射污染，也许逐渐不再适合人类生存，但是人物中的你以及政府并未察觉。你需要不断自救，忍耐恶劣天气，学会失去，冲出被遗弃之地，以取得外界的救助！
+            </div>
+            <div style="font-size: 16px;margin-top: 26px;line-height: 30px;color: #999;">
+                在这款游戏里，你需要通过按钮互动、选择地点，解决你面前的困难，或是种地发家，亦或是继续摆烂，最终达成目标、取得属于你的胜利！
+            </div>
+            <div style="font-size: 16px;margin-top: 26px;line-height: 30px;color: #999;">
+                The edge of desert
+                采用独特的战斗机制，当遇到敌人后，玩家和敌人都拥有各自的“强度值”，每次战斗都将随机抽取强度值范围内一个数值，点数大者可发动攻击。·当然，战斗不一定是唯一的选择，对于不同的敌人，玩家可以逃跑或是甚至和他们交互。
+            </div><a
+                style="display: block;background: #98a3ff;color: #FFF;text-align: center;font-weight: bold;font-size: 19px;line-height: 60px;margin: 0 auto;margin-top: 45px;border-radius: 32px;width: 80%;"
+                onclick="javascript:document.querySelector('.web_notice').remove()">我知道了</a>
+        </div>
+    </div>
+    <!-- 弹窗代码结束 -->
     <script>
-        var namea = prompt("请输入你的名字", "狗蛋");
+        var namea = prompt("请输入玩家昵称", "acake");
     </script>
 
     <!--    文字提示框   -->
@@ -139,7 +160,7 @@
         style="display: flex;flex:1;flex-direction:column-reverse;justify-content:flex-end;overflow:hidden" id="event">
 
         <div-items>
-            亲爱的玩家，你的小镇遭到了污染，也许不再适合人类生存。你需要找到线索，不断自救，冲出被遗弃之地，以取得一线生机！
+
         </div-items>
         <div-items>
             <!-- 起始描写 -->
