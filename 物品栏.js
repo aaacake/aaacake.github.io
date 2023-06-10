@@ -48,12 +48,9 @@ function fangbianmian() {
         localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
-
         if (Number(localStorage.fuzhong2) >= Number(localStorage.fuzhong4)) {
             document.getElementById("btn01").disabled = true;
-
         }
-
     } else if (localStorage.thing0101 > 0 && number01 == 0) {
         const para = document.createElement("div");
         para.setAttribute("id", "main01");
@@ -64,6 +61,7 @@ function fangbianmian() {
         number01++;
         localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+        document.getElementById("btn02").disabled = false;
     }
 }
 function fangbianmian0102() {
@@ -128,6 +126,7 @@ function shui() {
         number02++;
         localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.6).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+        document.getElementById("btn02").disabled = false;
     }
 }
 function shui0102() {
@@ -198,6 +197,7 @@ function zhidai() {
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         localStorage.fuzhong4 = (Number(localStorage.fuzhong4) + 10).toFixed(1);
         document.getElementById("zhongliangy").innerHTML = localStorage.fuzhong4;
+        document.getElementById("btn02").disabled = false;
     } else if (localStorage.thing0301 > 3) {
         // 点击使数值变化
         localStorage.thing0301 = Number(localStorage.thing0301) + 1;
@@ -276,6 +276,7 @@ function ganzi() {
         number04++;
         localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 2).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+        document.getElementById("btn02").disabled = false;
     }
 }
 function ganzi0102() {
@@ -322,11 +323,9 @@ function zhijin() {
         // 点击使数值变化
         localStorage.thing0501 = Number(localStorage.thing0501) + 1;
         document.getElementById("number05").innerHTML = localStorage.thing0501;
-
         localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
         document.getElementById("btn02").disabled = false;
-
         if (Number(localStorage.fuzhong2) >= Number(localStorage.fuzhong4)) {
             document.getElementById("btn01").disabled = true;
         } else { document.getElementById("btn02").disabled = false; }
@@ -340,6 +339,7 @@ function zhijin() {
         number05++;
         localStorage.fuzhong2 = (Number(localStorage.fuzhong2) + 0.1).toFixed(1);
         document.getElementById("zhongliang").innerHTML = localStorage.fuzhong2;
+        document.getElementById("btn02").disabled = false;
     }
 }
 function zhijin0102() {
