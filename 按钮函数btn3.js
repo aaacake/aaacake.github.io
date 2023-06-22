@@ -1,49 +1,10 @@
 function btn3(val) {
-    if (typeof (Storage) !== "undefined") {
-        
-        if (document.getElementById('btn03').innerText == "逛一下超市") {
-            aaa12(val);
-            additem("name19");
-        } else if (document.getElementById('btn03').innerText == "储藏间") {
-            aaa0102(val);
-            document.getElementById("btn01").innerHTML = "两箱方便面";
-            document.getElementById("btn02").innerHTML = "三箱矿泉水";
-            document.getElementById("btn03").innerHTML = "纸袋";
-            document.getElementById("btn04").innerHTML = "金属杆子";
-            document.getElementById("btn05").innerHTML = "一箱纸巾";
-            document.getElementById("btn06").innerHTML = "卫生间";
-            document.getElementById("btn07").innerHTML = "主卧";
-            document.getElementById("btn05").style.display = "block";
-            document.getElementById("btn06").style.display = "block";
-            document.getElementById("btn07").style.display = "block";
-        } else if (document.getElementById('btn03').innerText == "纸袋") {
-            document.getElementById("btn01").innerHTML = "扯走一个纸袋";
-            document.getElementById("btn02").innerHTML = "小心地叠回去一个纸袋";
-            document.getElementById("btn03").innerHTML = "返回";
-            document.getElementById("btn04").style.display = "none";
-            document.getElementById("btn05").style.display = "none";
-            document.getElementById("btn06").style.display = "none";
-            document.getElementById("btn07").style.display = "none";
-            document.getElementById("btn08").style.display = "none";
-            document.getElementById("btn02").disabled = true;
-
+    if(document.getElementById('btn03').innerText == "拾取十字架"){
+     additem("name08");
+     }else if(document.getElementById('btn03').innerText == "查看店主"){
+        document.getElementById("btn01").innerHTML = "查看日记本";
+        document.getElementById("btn02").style.display = "none";
+        document.getElementById("btn03").style.display = "none";
+        additem("name04");
         }
-        else if (document.getElementById('btn03').innerText == "返回") {
-            aaa0102(val);
-            document.getElementById("btn01").innerHTML = "两箱方便面";
-            document.getElementById("btn02").innerHTML = "三箱矿泉水";
-            document.getElementById("btn03").innerHTML = "纸袋";
-            document.getElementById("btn04").innerHTML = "金属杆子";
-            document.getElementById("btn05").innerHTML = "一箱纸巾";
-            document.getElementById("btn06").innerHTML = "卫生间";
-            document.getElementById("btn07").innerHTML = "主卧";
-            document.getElementById("btn04").style.display = "block";
-            document.getElementById("btn05").style.display = "block";
-            document.getElementById("btn06").style.display = "block";
-            document.getElementById("btn07").style.display = "block";
-        }
-    }
-    else {
-        document.getElementById("tongban1").innerHTML = "Sorry, your browser does not support web storage...";
-    }
 }

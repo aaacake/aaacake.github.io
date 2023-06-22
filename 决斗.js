@@ -12,7 +12,6 @@ function hideWindow() {
 function alltextresourcesin1() {
     localStorage.player00 = "惊慌失措的你:"
     localStorage.player01 = "血量:较低;"
-
     localStorage.player02 = "强度0~5"
 
     //00 敌对生物名字
@@ -32,11 +31,11 @@ function alltextresourcesin1() {
     suiji = 4;
     zhandou = 2;
     time = 3;
-    localStorage.suijif = "战斗！"
+    localStorage.suijif = "战斗！";
+    localStorage.throwoutt = "扔出物品";
+    localStorage.turnback = "撒腿就跑";
     rengouren = 0;
     rengougou = 0;
-
-
 
     //  战斗资源
     localStorage.ppp01 = "脚重重踢在了野狗身上，野狗吃痛。"
@@ -85,7 +84,6 @@ function eee01(val) {
         }, 1000)
     }
 }
-
 function addplayer(p) {
     // 创建 div 元素：
     const parap = document.createElement("div");
@@ -147,7 +145,81 @@ function addsuijif(yy) {
     // 把文本节点附加到 p 元素：
     parayy.appendChild(nodeyy);
     // 把 p 元素附加到 id 位置：
-    document.getElementById("zhandou").appendChild(parayy);
+    document.getElementById("zhandou1").appendChild(parayy);
+}
+// 抛出按钮，点击后可以把口袋中物品抛出，以达到互动效果
+// 把方便面扔给狗狗，狗狗会被分散注意力。玩家取得搜刮物资时间。
+function paochu(yyy) {
+    // 创建 div 元素：
+    const parayyy = document.createElement("button");
+    parayyy.setAttribute("id", "b2");
+    parayyy.setAttribute("onclick", "throwoutt");
+    //根据name取值
+    var stryyy = localStorage.getItem(yyy);
+    // 创建文本节点：
+    const nodeyyy = document.createTextNode(stryyy);
+    // 把文本节点附加到 p 元素：
+    parayyy.appendChild(nodeyyy);
+    // 把 p 元素附加到 id 位置：
+    document.getElementById("zhandou1").appendChild(parayyy);
+}
+function turnback(zzz) {
+    // 创建 div 元素：
+    const parazzz = document.createElement("button");
+    parazzz.setAttribute("id", "b3");
+    parazzz.setAttribute("onclick", "turnback");
+    //根据name取值
+    var strzzz = localStorage.getItem(zzz);
+    // 创建文本节点：
+    const nodezzz = document.createTextNode(strzzz);
+    // 把文本节点附加到 p 元素：
+    parazzz.appendChild(nodezzz);
+    // 把 p 元素附加到 id 位置：
+    document.getElementById("zhandou1").appendChild(parazzz);
+}
+//第二组的三个按钮要竖着排在原来三个下面
+function misbt1(m1) {
+    // 创建 div 元素：
+    const param1 = document.createElement("button");
+    param1.setAttribute("id", "b4");
+    param1.setAttribute("onclick", "misbt1");
+    param1.setAttribute("display", "none");
+    //根据name取值
+    var strm1 = localStorage.getItem(m1);
+    // 创建文本节点：
+    const nodem1 = document.createTextNode(strm1);
+    // 把文本节点附加到 p 元素：
+    param1.appendChild(nodem1);
+    // 把 p 元素附加到 id 位置：
+    document.getElementById("zhandou2").appendChild(param1);
+}function misbt2(m2) {
+    // 创建 div 元素：
+    const param2 = document.createElement("button");
+    param2.setAttribute("id", "b5");
+    param2.setAttribute("onclick", "misbt2");
+    param1.setAttribute("display", "none");
+    //根据name取值
+    var strm2 = localStorage.getItem(m2);
+    // 创建文本节点：
+    const nodem2 = document.createTextNode(strm2);
+    // 把文本节点附加到 p 元素：
+    param2.appendChild(nodem2);
+    // 把 p 元素附加到 id 位置：
+    document.getElementById("zhandou2").appendChild(param2);
+}function misbt3(m3) {
+    // 创建 div 元素：
+    const param3 = document.createElement("button");
+    param3.setAttribute("id", "b6");
+    param3.setAttribute("onclick", "misbt3");
+    param1.setAttribute("display", "none");
+    //根据name取值
+    var strm3 = localStorage.getItem(m3);
+    // 创建文本节点：
+    const nodem3 = document.createTextNode(strm3);
+    // 把文本节点附加到 p 元素：
+    param3.appendChild(nodem3);
+    // 把 p 元素附加到 id 位置：
+    document.getElementById("zhandou2").appendChild(param3);
 }
 function suijif(val, suiji1, suiji2) {
     if (suiji == 0) {
@@ -157,6 +229,8 @@ function suijif(val, suiji1, suiji2) {
         addsuiji("sui1");
         addsuiji("sui2");
         addsuijif("suijif");
+        paochu("throwoutt");
+        turnback("turnback");
         // document.getElementById("b1").onclick = touzi(val,2,2);
         suiji = 4;
     } else {
@@ -166,7 +240,6 @@ function suijif(val, suiji1, suiji2) {
         }, 1000)
     }
 }
-
 function addsuiji2(yyy) {
     // 创建 div 元素：
     const parayyy = document.createElement("div");
